@@ -1,10 +1,9 @@
 package com.example.StudFinder.Model.HouseSubComponents.FloorSubComponents.WallSubComponents;
 
-import java.util.Map;
-
 public class Studs {
 
-    private double studs;
+    //TODO: find out if it is a 2x4 or a 2x6
+    private double lumberNumber;
 
     public Studs(double length) {
         int studCount;
@@ -13,11 +12,11 @@ public class Studs {
 
     }
 
-    public double getStuds() {
-        return studs;
+    public double getLumberNumber() {
+        return lumberNumber;
     }
 
-    public void setStuds(int studs) {
-        this.studs = studs;
+    public void setLumberNumber(int lumberNumber) {
+        this.lumberNumber = lumberNumber;
     }
 }

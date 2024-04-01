@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Window {
 
+    //TODO: find out if it is a 2x4 or a 2x6
     private int lumberNumber;
     private int codeMultiplier;
     // TODO: make the front end so that they can creat a window,
