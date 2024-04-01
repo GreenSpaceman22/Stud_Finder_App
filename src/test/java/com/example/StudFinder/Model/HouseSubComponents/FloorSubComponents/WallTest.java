@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class WallTest {
 
-    double length = 10;
+    double length = 20;
     double height = 10;
     int backing = 4;
     int pointLoads = 4;
@@ -19,9 +19,8 @@ class WallTest {
     @Test
     void wallConstructor_shouldHaveLumberNumber_twentyTwo() {
         windowWidths.add(windowWidthOne);
-        windowWidths.add(windowWidthTwo);
         Wall wall = new Wall(length, height, windowWidths, pointLoads, backing);
         System.out.println(wall.getLumberNumber2x4());
-        assertEquals(22, wall.getLumberNumber2x4());
+        assertEquals(44, wall.getLumberNumber2x4());
     }
 }
