@@ -16,6 +16,8 @@ public class PointLoads {
     private void pointLoadCalculator(int pointLoadCounter) {
         int lumberNewCount = pointLoadCounter * getCodeMultiplier();
         setLumberNumber(lumberNewCount);
+        System.out.println("Calculating number for point loads, point loads = " + getLumberNumber());
+
     }
 
     public int getLumberNumber() {

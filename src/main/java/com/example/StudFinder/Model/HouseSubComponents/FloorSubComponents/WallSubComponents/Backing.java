@@ -8,6 +8,7 @@ public class Backing {
 
     public Backing(double count) {
         this.setLumberNumber(count * getCodeMultiplier());
+        System.out.println("Calculating number for backings, backings = " + getLumberNumber());
     }
 
     public double getLumberNumber() {
