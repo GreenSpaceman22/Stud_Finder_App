@@ -12,6 +12,8 @@ public class Plate {
         boardCount = boardCount / 20;
 
         setLumberNumber(boardCount);
+        System.out.println("Calculating number for plates, plates = " + getLumberNumber());
+
     }
 
     public double getLumberNumber() {

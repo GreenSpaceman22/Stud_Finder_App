@@ -7,9 +7,9 @@ public class Studs {
 
     //TODO: refactor constructor to call a method instead of doing the logic in the constructor.
     public Studs(double length) {
-        int studCount;
-        int modCounter = (int) Math.ceil(length);
-        modCounter = modCounter / 3;
+
+
+        System.out.println("Calculating number for studs, studs = " + getLumberNumber());
 
     }
 

@@ -12,6 +12,7 @@ public class Wall {
     private double length;
     private double height;
     private double backing;
+    // TODO: figure out plate count by the wall length.
     private double plateCount;
     private double studs;
     private int pointLoads;
@@ -20,7 +21,7 @@ public class Wall {
 
     // TODO: refactor to allow lumberCalculator to account for null windows
     // constructor with no windows
-    public Wall(double length, double height, int backing, int pointLoads, int plates) {
+    public Wall(double length, double height, int backing, int pointLoads) {
         ArrayList<Double> noWindows = new ArrayList<>();
         noWindows.add(0.0);
         noWindows.add(0.0);
@@ -28,16 +29,16 @@ public class Wall {
         Window window = new Window(noWindows);
         Backing backings = new Backing(backing);
         PointLoads pointLoad = new PointLoads(pointLoads);
-        Plate platesCount = new Plate(plates);
+        Plate platesCount = new Plate(length);
         lumberCalculator(studs, window, backings, pointLoad, platesCount);
     }
     // constructor with windows
-    public Wall(double length, double height, ArrayList<Double> windowWidths, int backing, int pointLoads, int plates) {
+    public Wall(double length, double height, ArrayList<Double> windowWidths, int backing, int pointLoads) {
         Studs studs = new Studs(length);
         Window window = new Window(windowWidths);
         Backing backings = new Backing(backing);
         PointLoads pointLoad = new PointLoads(pointLoads);
-        Plate platesCount = new Plate(plates);
+        Plate platesCount = new Plate(length);
         lumberCalculator(studs, window, backings, pointLoad, platesCount);
     }
 

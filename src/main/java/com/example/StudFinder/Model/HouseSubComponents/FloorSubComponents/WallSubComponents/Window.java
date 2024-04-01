@@ -25,6 +25,8 @@ public class Window {
             lumberCountMod(width);
             setLumberNumber(getLumberNumber() + getCodeMultiplier());
         }
+        System.out.println("Calculating number for windows, windows = " + getLumberNumber());
+
     }
 
     // checks window width to determine which number it should set the codeMultiplier to, either 4, 9, or 6,
