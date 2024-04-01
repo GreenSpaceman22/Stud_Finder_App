@@ -2,17 +2,23 @@ package com.example.StudFinder.Model.HouseSubComponents.FloorSubComponents.WallS
 
 public class Backing {
 
-    private double count;
+    //TODO: find out if it is a 2x4 or a 2x6
+    private double lumberNumber;
+    private final int codeMultiplier = 2;
 
-    public Backing(double length) {
-
+    public Backing(double count) {
+        this.setLumberNumber(count * getCodeMultiplier());
     }
 
-    public double getCount() {
-        return count;
+    public double getLumberNumber() {
+        return lumberNumber;
     }
 
-    public void setCount(double count) {
-        this.count = count;
+    public void setLumberNumber(double lumberNumber) {
+        this.lumberNumber = lumberNumber;
+    }
+
+    public int getCodeMultiplier() {
+        return codeMultiplier;
     }
 }

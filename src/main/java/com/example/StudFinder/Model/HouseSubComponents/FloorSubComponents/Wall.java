@@ -1,6 +1,5 @@
 package com.example.StudFinder.Model.HouseSubComponents.FloorSubComponents;
 
-import com.example.StudFinder.Model.HouseSubComponents.Floor;
 import com.example.StudFinder.Model.HouseSubComponents.FloorSubComponents.WallSubComponents.Plate;
 
 public class Wall {
@@ -14,7 +13,7 @@ public class Wall {
     public Wall(double length, int windows, int backing, double height) {
 
         Plate plate = new Plate(length);
-        setPlateCount(plate.getCount());
+        setPlateCount(plate.getLumberNumber());
 
         setHeight(height);
 
