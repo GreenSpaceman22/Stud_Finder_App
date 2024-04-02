@@ -13,7 +13,9 @@ public class Floor {
     private ArrayList<Wall> walls;
 
     public Floor(double height) {
-        this.height = height;
+        ArrayList<Wall> walls = new ArrayList<>();
+        setHeight(height);
+        setWalls(walls);
     }
 
     // GETTERS/SETTERS

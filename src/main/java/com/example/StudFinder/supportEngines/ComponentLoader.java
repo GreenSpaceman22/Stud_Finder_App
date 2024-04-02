@@ -1,4 +1,4 @@
-package com.example.StudFinder.supportengines;
+package com.example.StudFinder.supportEngines;
 
 import com.example.StudFinder.Model.House;
 import com.example.StudFinder.Model.HouseSubComponents.Floor;
