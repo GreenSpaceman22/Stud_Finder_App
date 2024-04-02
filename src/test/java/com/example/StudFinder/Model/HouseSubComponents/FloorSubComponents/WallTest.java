@@ -19,7 +19,7 @@ class WallTest {
     @Test
     void wallConstructor_shouldHaveLumberNumber_twentyTwo() {
         windowWidths.add(windowWidthOne);
-        Wall wall = new Wall(length, height, windowWidths, pointLoads, backing);
+        Wall wall = new Wall(length, windowWidths, pointLoads, backing);
         System.out.println(wall.getLumberNumber2x4());
         assertEquals(44, wall.getLumberNumber2x4());
     }

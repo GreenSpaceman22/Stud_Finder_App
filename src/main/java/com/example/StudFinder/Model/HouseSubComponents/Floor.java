@@ -9,46 +9,29 @@ import java.util.ArrayList;
 public class Floor {
 
 
-    private static double height;
-    private static ArrayList<Wall> walls;
-    private static ArrayList<Window> windows;
-    private static ArrayList<Door> doors;
+    private double height;
+    private ArrayList<Wall> walls;
 
-
-    public Floor(double height, ArrayList<Wall> walls, ArrayList<Door> doors) {
-
+    public Floor(double height) {
+        ArrayList<Wall> walls = new ArrayList<>();
+        setHeight(height);
+        setWalls(walls);
     }
 
-    public static double getHeight() {
+    // GETTERS/SETTERS
+    public double getHeight() {
         return height;
     }
 
-    public static void setHeight(double height) {
-        Floor.height = height;
+    public void setHeight(double height) {
+        this.height = height;
     }
 
-    public static ArrayList<Wall> getWalls() {
+    public ArrayList<Wall> getWalls() {
         return walls;
     }
 
-    public static void setWalls(ArrayList<Wall> walls) {
-        Floor.walls = walls;
+    public void setWalls(ArrayList<Wall> walls) {
+        this.walls = walls;
     }
-
-    public static ArrayList<Window> getWindows() {
-        return windows;
-    }
-
-    public static void setWindows(ArrayList<Window> windows) {
-        Floor.windows = windows;
-    }
-
-    public static ArrayList<Door> getDoors() {
-        return doors;
-    }
-
-    public static void setDoors(ArrayList<Door> doors) {
-        Floor.doors = doors;
-    }
-
 }

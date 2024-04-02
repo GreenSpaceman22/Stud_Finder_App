@@ -4,20 +4,20 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PointLoadsTest {
+class PointLoadTest {
 
     int pointLoads = 3;
 
     @Test
     void pointLoadConstructor_shouldSetLumberNumber_equalToNine_ifThreePassed() {
-        PointLoads pointLoadCount = new PointLoads(pointLoads);
+        PointLoad pointLoadCount = new PointLoad(pointLoads);
 
         assertEquals(9, pointLoadCount.getLumberNumber());
     }
 
     @Test
     void pointLoadConstructor_shouldSetLumberNumber_equalToZero_ifZeroPassed() {
-        PointLoads pointLoadCount = new PointLoads(0);
+        PointLoad pointLoadCount = new PointLoad(0);
 
         assertEquals(0, pointLoadCount.getLumberNumber());
     }

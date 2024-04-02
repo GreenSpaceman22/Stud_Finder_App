@@ -3,7 +3,6 @@ package com.example.StudFinder.Model.HouseSubComponents.FloorSubComponents;
 import com.example.StudFinder.Model.HouseSubComponents.FloorSubComponents.WallSubComponents.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Wall {
 
@@ -21,30 +20,28 @@ public class Wall {
 
     // TODO: refactor to allow lumberCalculator to account for null windows
     // constructor with no windows
-    public Wall(double length, double height, int backing, int pointLoads) {
-        ArrayList<Double> noWindows = new ArrayList<>();
-        noWindows.add(0.0);
-        noWindows.add(0.0);
+    public Wall(double length, int backing, int pointLoads) {
+        ArrayList<Double> noWindows = noWindowInitiator(0.0);
         Studs studs = new Studs(length);
         Window window = new Window(noWindows);
         Backing backings = new Backing(backing);
-        PointLoads pointLoad = new PointLoads(pointLoads);
+        PointLoad pointLoad = new PointLoad(pointLoads);
         Plate platesCount = new Plate(length);
         lumberCalculator(studs, window, backings, pointLoad, platesCount);
     }
     // constructor with windows
-    public Wall(double length, double height, ArrayList<Double> windowWidths, int backing, int pointLoads) {
+    public Wall(double length, ArrayList<Double> windowWidths, int backing, int pointLoads) {
         Studs studs = new Studs(length);
         Window window = new Window(windowWidths);
         Backing backings = new Backing(backing);
-        PointLoads pointLoad = new PointLoads(pointLoads);
+        PointLoad pointLoad = new PointLoad(pointLoads);
         Plate platesCount = new Plate(length);
         lumberCalculator(studs, window, backings, pointLoad, platesCount);
     }
 
     // TODO: find out which ones need to get put into the 2x4s and which go to 2x6s
     // Calculates the lumber count for that wall based on all the potential subcomponents of it.
-    private void lumberCalculator(Studs stud, Window window, Backing backing, PointLoads pointLoads, Plate plates) {
+    private void lumberCalculator(Studs stud, Window window, Backing backing, PointLoad pointLoads, Plate plates) {
         double lumberCounter = stud.getLumberNumber() +
                 window.getLumberNumber() +
                 backing.getLumberNumber() +
@@ -54,8 +51,13 @@ public class Wall {
         setLumberNumber2x4(roundedLumberCount);
     }
 
-    // GETTERS AND SETTERS
+    private ArrayList<Double> noWindowInitiator(double emptyValue) {
+        ArrayList<Double> noWindows = new ArrayList<>();
+        noWindows.add(0.0);
+        return noWindows;
+    }
 
+    // GETTERS/SETTERS
     public int getLumberNumber2x4() {
         return lumberNumber2x4;
     }

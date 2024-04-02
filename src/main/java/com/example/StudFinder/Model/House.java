@@ -12,15 +12,32 @@ import java.util.ArrayList;
 
 @Document
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class House {
-
-    private String name;
 
     private String address;
 
     private ArrayList<Floor> floors;
 
+    public House(String address) {
+        ArrayList<Floor> floors = new ArrayList<>();
+        setAddress(address);
+        setFloors(floors);
+    }
 
+    // GETTERS/SETTERS
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public ArrayList<Floor> getFloors() {
+        return floors;
+    }
+
+    public void setFloors(ArrayList<Floor> floors) {
+        this.floors = floors;
+    }
 }

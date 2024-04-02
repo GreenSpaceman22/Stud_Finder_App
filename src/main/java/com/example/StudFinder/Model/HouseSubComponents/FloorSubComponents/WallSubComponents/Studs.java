@@ -7,17 +7,16 @@ public class Studs {
 
     //TODO: refactor constructor to call a method instead of doing the logic in the constructor.
     public Studs(double length) {
-        studCalculator(length);
+        calculateLumberNumber(length);
         System.out.println("Calculating number for studs, studs = " + getLumberNumber());
-
     }
 
-    private void studCalculator(double length) {
-        int wholeStuds;
-        wholeStuds = (((int) Math.ceil(length)) * 12) / 16;
+    private void calculateLumberNumber(double length) {
+        int wholeStuds = (((int) Math.ceil(length)) * 12) / 16;
         setLumberNumber(wholeStuds);
     }
 
+    // GETTERS/SETTERS
     public double getLumberNumber() {
         return lumberNumber;
     }
