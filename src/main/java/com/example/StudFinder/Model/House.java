@@ -22,6 +22,16 @@ public class House {
 
     private ArrayList<Floor> floors;
 
+
+    // GETTERS/SETTERS
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public ArrayList<Floor> getFloors() {
         return floors;
     }

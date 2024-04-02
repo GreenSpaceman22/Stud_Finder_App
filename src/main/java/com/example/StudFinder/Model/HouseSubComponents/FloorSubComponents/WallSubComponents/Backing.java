@@ -6,11 +6,17 @@ public class Backing {
     private double lumberNumber;
     private final int codeMultiplier = 2;
 
-    public Backing(double count) {
-        this.setLumberNumber(count * getCodeMultiplier());
+    public Backing(double backingCount) {
+        calculateLumberNumber(backingCount);
         System.out.println("Calculating number for backings, backings = " + getLumberNumber());
     }
 
+    private void calculateLumberNumber(double backingCount) {
+        backingCount = backingCount * getCodeMultiplier();
+        setLumberNumber(backingCount);
+    }
+
+    // GETTERS/SETTERS
     public double getLumberNumber() {
         return lumberNumber;
     }

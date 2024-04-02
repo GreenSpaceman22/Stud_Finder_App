@@ -7,15 +7,19 @@ public class Plate {
 
     //TODO: refactor constructor to call a method instead of doing the logic in the constructor.
     public Plate(double length) {
+        calculateLumberNumber(length);
+        System.out.println("Calculating number for plates, plates = " + getLumberNumber());
+
+    }
+    private void calculateLumberNumber(double length) {
         length = Math.ceil(length / 20) * 20;
         double boardCount = length * 3;
         boardCount = boardCount / 20;
 
         setLumberNumber(boardCount);
-        System.out.println("Calculating number for plates, plates = " + getLumberNumber());
-
     }
 
+    // GETTERS/SETTERS
     public double getLumberNumber() {
         return lumberNumber;
     }

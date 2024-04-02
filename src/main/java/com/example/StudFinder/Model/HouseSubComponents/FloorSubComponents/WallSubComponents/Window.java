@@ -22,7 +22,7 @@ public class Window {
     // same as doing window count * codeMultiplier, but it accounts for windows of varying widths
     private void lumberLooper(ArrayList<Double> windowWidths) {
         for (double width : windowWidths) {
-            lumberCountMod(width);
+            calculateLumberNumber(width);
             setLumberNumber(getLumberNumber() + getCodeMultiplier());
         }
         System.out.println("Calculating number for windows, windows = " + getLumberNumber());
@@ -30,7 +30,7 @@ public class Window {
     }
 
     // checks window width to determine which number it should set the codeMultiplier to, either 4, 9, or 6,
-    private void lumberCountMod(double windowWidth) {
+    private void calculateLumberNumber(double windowWidth) {
         int codeNumber = 6;
 
         if (windowWidth >= 8) {

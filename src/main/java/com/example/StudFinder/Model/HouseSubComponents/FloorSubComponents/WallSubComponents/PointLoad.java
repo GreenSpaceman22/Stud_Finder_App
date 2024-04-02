@@ -1,25 +1,26 @@
 package com.example.StudFinder.Model.HouseSubComponents.FloorSubComponents.WallSubComponents;
 
-public class PointLoads {
+public class PointLoad {
 
     //TODO: find out if it is a 2x4 or a 2x6
     private int lumberNumber;
     private final int codeMultiplier = 3;
 
-    public PointLoads(int pointLoadCount) {
-        pointLoadCalculator(pointLoadCount);
+    public PointLoad(int pointLoadCount) {
+        calculateLumberNumber(pointLoadCount);
     }
 
     // called in constructor,
     // calculates lumber based on number of pointloads * whatever the code specifies.
     // (in this case the code says to multiply by 3)
-    private void pointLoadCalculator(int pointLoadCounter) {
-        int lumberNewCount = pointLoadCounter * getCodeMultiplier();
-        setLumberNumber(lumberNewCount);
+    private void calculateLumberNumber(int pointLoadCounter) {
+        pointLoadCounter = pointLoadCounter * getCodeMultiplier();
+        setLumberNumber(pointLoadCounter);
         System.out.println("Calculating number for point loads, point loads = " + getLumberNumber());
 
     }
 
+    // GETTERS/SETTERS
     public int getLumberNumber() {
         return lumberNumber;
     }

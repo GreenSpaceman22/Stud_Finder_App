@@ -16,6 +16,7 @@ public class Floor {
         this.height = height;
     }
 
+    // GETTERS/SETTERS
     public double getHeight() {
         return height;
     }
