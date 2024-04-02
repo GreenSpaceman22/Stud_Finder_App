@@ -22,9 +22,7 @@ public class Wall {
     // TODO: refactor to allow lumberCalculator to account for null windows
     // constructor with no windows
     public Wall(double length, double height, int backing, int pointLoads) {
-        ArrayList<Double> noWindows = new ArrayList<>();
-        noWindows.add(0.0);
-        noWindows.add(0.0);
+        ArrayList<Double> noWindows = noWindowInitiator(0.0);
         Studs studs = new Studs(length);
         Window window = new Window(noWindows);
         Backing backings = new Backing(backing);
@@ -52,6 +50,12 @@ public class Wall {
                 plates.getLumberNumber();
         int roundedLumberCount = (int) Math.ceil(lumberCounter);
         setLumberNumber2x4(roundedLumberCount);
+    }
+
+    private ArrayList<Double> noWindowInitiator(double emptyValue) {
+        ArrayList<Double> noWindows = new ArrayList<>();
+        noWindows.add(0.0);
+        return noWindows;
     }
 
     // GETTERS AND SETTERS
