@@ -18,6 +18,11 @@ public class Floor {
         setWalls(walls);
     }
 
+    public Floor(double height, ArrayList<Wall> walls) {
+        setHeight(height);
+        setWalls(walls);
+    }
+
     // GETTERS/SETTERS
     public double getHeight() {
         return height;

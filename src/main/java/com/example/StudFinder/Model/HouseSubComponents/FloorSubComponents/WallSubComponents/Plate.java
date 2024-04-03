@@ -11,6 +11,7 @@ public class Plate {
         System.out.println("Calculating number for plates, plates = " + getLumberNumber());
 
     }
+    // TODO: make it so instead of doing the calc here, it is calculated at the end of the 2x6 OR 2x4 walls (totalLength/20 * 3)
     private void calculateLumberNumber(double length) {
         length = Math.ceil(length / 20) * 20;
         double boardCount = length * 3;
