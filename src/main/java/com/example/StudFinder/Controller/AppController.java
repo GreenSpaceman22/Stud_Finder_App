@@ -27,8 +27,9 @@ class AppController {
     }
 
     @RequestMapping(value = "/startNewHouse", method = RequestMethod.POST)
-    public House createHouse(@RequestBody String address) {
-        return new House(address);
+    public House createHouse(@RequestBody Request request) {
+        System.out.println(request.getAddress());
+        return new House(request.getAddress());
     }
 
     @RequestMapping(value = "/addNewFloor", method = RequestMethod.POST)

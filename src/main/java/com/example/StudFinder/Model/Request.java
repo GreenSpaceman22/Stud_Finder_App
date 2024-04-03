@@ -11,7 +11,7 @@ import java.util.ArrayList;
 @NoArgsConstructor
 @Data
 public class Request {
-
+    String address;
     double height;
     House house;
     Wall wall;
