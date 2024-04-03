@@ -1,21 +1,23 @@
 package com.example.StudFinder.supportEngines;
 
 import com.example.StudFinder.Model.House;
-import com.example.StudFinder.Model.HouseSubComponents.Floor;
 import com.example.StudFinder.Model.HouseSubComponents.FloorSubComponents.Wall;
-
-import java.util.ArrayList;
+import com.example.StudFinder.Model.Request;
 
 public class EndPointSupportEngine {
 
-    public static void addNewWall(Wall wall, House house, int floorNumber) {
-        ArrayList<Floor> floors = house.getFloors();
-        ComponentLoader.loadWall(floors.get(floorNumber - 1), wall);
-        house.setFloors(floors);
-    }
-    public static void addNewFloor(double height, House house) {
-        Floor floor = new Floor(height);
-        ComponentLoader.loadFloor(house, floor);
+    public static House forNewFloorEndPoint(Request request) {
+        House house = request.getHouse();
+        ComponentLoaderEngine.addNewFloor(request.getHeight(), house);
+        return house;
     }
 
+    public static House forNewWallEndPoint(Request request) {
+        House house = request.getHouse();
+        int floorNumber = request.getFloorNumber();
+        Wall wall = request.getWall();
+
+        ComponentLoaderEngine.addNewWall(wall, house, floorNumber);
+        return house;
+    }
 }

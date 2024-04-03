@@ -1,7 +1,7 @@
 package com.example.StudFinder.Controller;
 
 import com.example.StudFinder.Model.House;
-import com.example.StudFinder.Model.HouseSubComponents.FloorSubComponents.Wall;
+import com.example.StudFinder.Model.Request;
 import com.example.StudFinder.Repository.HouseRepo;
 import com.example.StudFinder.supportEngines.EndPointSupportEngine;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,19 +31,16 @@ class AppController {
         return new House(address);
     }
 
+    // TODO: find out if I need to make it a request object, OR make it an array of random things.
     @RequestMapping(value = "/addNewFloor", method = RequestMethod.POST)
-    public House createFloor(@RequestBody String heightStr, House house) {
-        System.out.println("height = ");
-        System.out.println("house = " + house);
-        double height = Double.parseDouble(heightStr);
-        EndPointSupportEngine.addNewFloor(height, house);
+    public House createFloor(@RequestBody Request request) {
+        House house = EndPointSupportEngine.forNewFloorEndPoint(request);
         return house;
     }
 
-    @RequestMapping(value = "/addNewWall", method = RequestMethod.POST)
-    public House createWall(@RequestBody Wall wall, House house, int floorNumber) {
-        EndPointSupportEngine.addNewWall(wall, house, floorNumber);
-        return house;
+    @RequestMapping(value = "/addNewWall", method = RequestMethod.POST) //Wall wall, House house, int floorNumber
+    public House createWall(@RequestBody Request request) {
+        return EndPointSupportEngine.forNewWallEndPoint(request);
     }
 
 }
