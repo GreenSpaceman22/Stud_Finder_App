@@ -25,7 +25,7 @@ public class ComponentEndPointConnectorEngine {
     public static void buildExistingWalls(Request request) {
         ArrayList<Wall> walls = request.getHouse().getFloors().get(request.getFloorNumber()).getWalls();
         for (Wall wall : walls) {
-            System.out.println(wall);
+            System.out.println("yes");
         }
     }
 }

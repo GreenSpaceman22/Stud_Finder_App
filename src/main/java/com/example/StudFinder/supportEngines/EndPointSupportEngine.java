@@ -16,11 +16,11 @@ public class EndPointSupportEngine {
     }
 
     public static House forNewWallEndPoint(Request request) {
-        ComponentEndPointConnectorEngine.buildExistingWalls(request);
-        System.out.println("request = " + request);
+
         House house = request.getHouse();
         int floorNumber = request.getFloorNumber();
         Wall wall = ComponentEndPointConnectorEngine.createWall(request);
+
         if (house.getFloors().get(floorNumber) != null) {
             System.out.println("I'm in the if");
             ComponentEndPointConnectorEngine.addNewWall(wall, house, floorNumber);

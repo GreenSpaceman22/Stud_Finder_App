@@ -2,9 +2,11 @@ package com.example.StudFinder.Model.HouseSubComponents.FloorSubComponents;
 
 import com.example.StudFinder.Model.HouseSubComponents.FloorSubComponents.WallSubComponents.*;
 import lombok.AllArgsConstructor;
-
+import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public class Wall {
 
     //    private double height;
@@ -18,7 +20,6 @@ public class Wall {
 
     // CONSTRUCTORS
 
-    // TODO: refactor to allow lumberCalculator to account for null windows
     // constructor with no windows
     public Wall(double length, int backing, int pointLoads) {
         ArrayList<Double> noWindows = noWindowInitiator();
@@ -29,7 +30,6 @@ public class Wall {
         Plate platesCount = new Plate(length);
         lumberCalculator(studs, window, backings, pointLoad, platesCount);
     }
-
     // constructor with windows
     public Wall(double length, ArrayList<Double> windowWidths, int backing, int pointLoads) {
         Studs studs = new Studs(length);
@@ -39,13 +39,6 @@ public class Wall {
         Plate platesCount = new Plate(length);
         setAllFields(length, backing, pointLoads);
         lumberCalculator(studs, window, backings, pointLoad, platesCount);
-    }
-    // constructor for existing walls
-    public Wall(int lumberNumber2x4, double length, double backing, int pointLoads) {
-        this.lumberNumber2x4 = lumberNumber2x4;
-        this.length = length;
-        this.backing = backing;
-        this.pointLoads = pointLoads;
     }
 
     // TODO: find out which ones need to get put into the 2x4s and which go to 2x6s
