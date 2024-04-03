@@ -31,15 +31,17 @@ class AppController {
         return new House(address);
     }
 
-    // TODO: find out if I need to make it a request object, OR make it an array of random things.
     @RequestMapping(value = "/addNewFloor", method = RequestMethod.POST)
     public House createFloor(@RequestBody Request request) {
-        House house = EndPointSupportEngine.forNewFloorEndPoint(request);
-        return house;
+        // below line handles unwrapping house obj,
+        // then passes it to floorLoading method,
+        // returns the modified house obj
+        return EndPointSupportEngine.forNewFloorEndPoint(request);
     }
 
-    @RequestMapping(value = "/addNewWall", method = RequestMethod.POST) //Wall wall, House house, int floorNumber
+    @RequestMapping(value = "/addNewWall", method = RequestMethod.POST)
     public House createWall(@RequestBody Request request) {
+        System.out.println("Request \n \n _______________ \n>> " + request);
         return EndPointSupportEngine.forNewWallEndPoint(request);
     }
 
